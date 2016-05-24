@@ -1,14 +1,22 @@
 <?php
 namespace Index;
-$targetExtension = 'json';
-$saveFileName = 'temp';
-$pathToParseFile = 'three.ini';
+
+
+$parseFile = $argv[1];
+$saveFile = $argv[2];
+
+convert($parseFile, $saveFile);
+
 
 function getExtension ($path) {
   if(file_exists($path)){
     $info = pathinfo($path);
     return  $info['extension'];
   }
+}
+
+function getFormat ($string){
+    return substr ($string, strpos($string, '.') + 1 , strlen($string));
 }
 
 function decode ($path){
@@ -25,7 +33,9 @@ function decode ($path){
 }
 
 function encode ($array, $target){
-    switch ($target) {
+
+    $format = getFormat($target);
+    switch ($format) {
       case 'json':
         return json_encode($array);
       case 'ini':
@@ -35,7 +45,12 @@ function encode ($array, $target){
     }
 }
 
-$a = decode ($pathToParseFile);
-$b = encode ($a,$targetExtension);
-var_dump($b);
-file_put_contents("${saveFileName}.${targetExtension}",$b);
+
+
+function convert ($from, $to){
+    $array = decode($from);
+
+    $data = encode($array, $to);
+    var_dump($data);
+    file_put_contents($to,$data);
+}
