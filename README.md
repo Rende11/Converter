@@ -1,11 +1,11 @@
-# Converter
+## Converter
 CLI Data format converter
 
 ### Supported formats
 
-## From
+#### From
 * JSON
 * ini
 
-## To
+### To
 * JSON
