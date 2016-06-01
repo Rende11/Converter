@@ -1,24 +1,20 @@
 <?php
 namespace App;
 
-require_once "Decoders\Decode.php";
-require_once "Encoders\Encode.php";
-require_once "Helpers\Route.php";
-
 use function Decoders\Decode\jsonDecode;
 use function Decoders\Decode\iniDecode;
-
-use function Encoders\Encode\jsonEncode;
-
-use function Helpers\Route\getExtension;
-use function Helpers\Route\getFormat;
-
-
-$parseFile = $argv[1];
-$saveFile = $argv[2];
-
-convert($parseFile, $saveFile);
-
+//
+// use function Encoders\Encode\jsonEncode;
+//
+// use function Helpers\Route\getExtension;
+// use function Helpers\Route\getFormat;
+//
+//
+// $parseFile = $argv[1];
+// $saveFile = $argv[2];
+//
+// convert($parseFile, $saveFile);
+//
 function convert ($parseFile, $saveFile){
 
     $extension = getExtension($parseFile);
@@ -29,19 +25,15 @@ function convert ($parseFile, $saveFile){
     saveFile($data, $saveFile);
 }
 
-$extension = getExtension($parseFile);
-
-function parse ($parseFile){
-    return file_get_contents($parseFile);
-}
-
-switch ($ext) {
-  case 'json':
-    return jsonDecode ($file);
-  case 'ini':
-    return iniDecode ($file);
-  default :
-    return -1;
+function decode ($string, $extension) {
+    switch ($extension) {
+        case 'json':
+            return jsonDecode ($string);
+        case 'ini':
+            return iniDecode ($string);
+        default :
+            return -1;
+    }
 }
 function encode ($array, $target){
     $format = getFormat($target);

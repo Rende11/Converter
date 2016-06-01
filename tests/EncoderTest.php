@@ -1,7 +1,6 @@
 <?php
 namespace Tests;
 
-require_once 'vendor/autoload.php';
 use function App\Coders\Encoders\jsonEncode;
 
 class EncoderTest extends \PHPUnit_Framework_TestCase {

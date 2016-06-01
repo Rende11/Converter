@@ -9,4 +9,5 @@ return array(
     'c634812e7cc9fc3a7b2434badb1f43c2' => $baseDir . '/src/Coders/Decoders/Decode.php',
     'f9d73714af8e485a646cb80ee76cc3dc' => $baseDir . '/src/Coders/Encoders/Encode.php',
     'd1664f02049d83a1ecf76f141f17f5ae' => $baseDir . '/src/Helpers/Help.php',
+    'e72e946e849d2480ec94e7621ac897c8' => $baseDir . '/src/Converter.php',
 );

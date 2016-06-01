@@ -1,7 +1,6 @@
 <?php
 namespace Tests;
 
-require_once 'vendor/autoload.php';
 use function App\Coders\Decoders\jsonDecode;
 use function App\Coders\Decoders\iniDecode;
 
