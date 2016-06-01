@@ -1,5 +1,5 @@
 <?php
-namespace App\Index;
+namespace App;
 
 require_once "Decoders\Decode.php";
 require_once "Encoders\Encode.php";

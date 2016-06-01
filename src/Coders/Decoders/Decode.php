@@ -1,8 +1,9 @@
 <?php
-namespace App\Decode;
+namespace App\Coders\Decoders;
 
 function jsonDecode ($path) {
-    return json_decode($path);
+    $string = file_get_contents($path);
+    return json_decode($string, true);
 }
 
 function iniDecode ($path) {
