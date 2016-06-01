@@ -1,5 +1,5 @@
 <?php
-require_once 'src/Coders/Decoders/Decode.php';
+require_once 'vendor/autoload.php';
 use function App\Coders\Decoders\jsonDecode;
 
 class DecodeTest extends \PHPUnit_Framework_TestCase {
@@ -9,7 +9,7 @@ class DecodeTest extends \PHPUnit_Framework_TestCase {
 
   protected function setUp (){
 
-    $this->jsonFile = 'jsonTmp';
+    $this->jsonFile = 'jsonTmp.json';
     $this->data = '{"one": 1, "two": 2, "three": 3}';
     $this->expectedArray = [
       "one" => 1,

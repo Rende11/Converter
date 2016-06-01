@@ -1,5 +1,5 @@
 {
   "autoload": {
-    "files": ["src/*"]
+    "files": ["src/Coders/Decoders/Decode.php"]
   }
 }

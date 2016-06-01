@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'dce9d5db981994bf6409268ddda1409b' => $baseDir . '/src/*',
+    'c634812e7cc9fc3a7b2434badb1f43c2' => $baseDir . '/src/Coders/Decoders/Decode.php',
 );
