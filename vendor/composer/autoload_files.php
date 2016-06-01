@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'c634812e7cc9fc3a7b2434badb1f43c2' => $baseDir . '/src/Coders/Decoders/Decode.php',
+    'f9d73714af8e485a646cb80ee76cc3dc' => $baseDir . '/src/Coders/Encoders/Encode.php',
 );
