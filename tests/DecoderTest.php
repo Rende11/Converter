@@ -27,9 +27,9 @@ class DecodeTest extends \PHPUnit_Framework_TestCase {
       }
     }
 
-    file_put_contents($this->tmpFiles['json'], $this->data['json']);
-    file_put_contents($this->tmpFiles['ini'], $this->data['ini']);
-
+    foreach ($this->tmpFiles as $key => $value) {
+        file_put_contents($this->tmpFiles[$key], $this->data[$key]);
+    }
   }
 
   public function testJsonDecode (){
