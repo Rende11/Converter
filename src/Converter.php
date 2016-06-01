@@ -19,21 +19,29 @@ $saveFile = $argv[2];
 
 convert($parseFile, $saveFile);
 
-function decode ($path){
-    $ext = getExtension($path);
-    $file = file_get_contents($path);
+function convert ($parseFile, $saveFile){
 
-    switch ($ext) {
-      case 'json':
-        return jsonDecode ($file);
-      case 'ini':
-        return iniDecode ($file);
-      default :
-        return -1;
-    }
+    $extension = getExtension($parseFile);
+    $string = parse($parseFile);
+    $array = decode ($string, $extension);
+    $data = encode($array);
+    saveFile($data);
 }
 
+$extension = getExtension($parseFile);
 
+function parse ($parseFile){
+    return file_get_contents($parseFile);
+}
+
+switch ($ext) {
+  case 'json':
+    return jsonDecode ($file);
+  case 'ini':
+    return iniDecode ($file);
+  default :
+    return -1;
+}
 function encode ($array, $target){
     $format = getFormat($target);
 
@@ -43,11 +51,4 @@ function encode ($array, $target){
       default:
         return -1;
     }
-}
-
-function convert ($from, $to){
-    $array = decode($from);
-    $data = encode($array, $to);
-    var_dump($data);
-    file_put_contents($to,$data);
 }
