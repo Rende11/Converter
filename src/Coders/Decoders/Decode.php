@@ -7,5 +7,6 @@ function jsonDecode ($path) {
 }
 
 function iniDecode ($path) {
-    return parse_ini_string($path);
+    $string = file_get_contents($path);
+    return parse_ini_string($string);
 }
