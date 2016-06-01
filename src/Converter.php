@@ -22,10 +22,11 @@ convert($parseFile, $saveFile);
 function convert ($parseFile, $saveFile){
 
     $extension = getExtension($parseFile);
+    $targetFormat = getFormat($saveFile);
     $string = parse($parseFile);
     $array = decode ($string, $extension);
-    $data = encode($array);
-    saveFile($data);
+    $data = encode($array,$targetFormat);
+    saveFile($data, $saveFile);
 }
 
 $extension = getExtension($parseFile);
