@@ -16,3 +16,7 @@ function getFormat ($string) {
 function parse ($parseFile){
     return file_get_contents($parseFile);
 }
+
+function saveFile($data, $path){
+    file_put_contents($path,$data);
+}

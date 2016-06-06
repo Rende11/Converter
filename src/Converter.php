@@ -4,11 +4,8 @@ namespace App;
 use function App\Coders\Decoders\jsonDecode;
 use function App\Coders\Decoders\iniDecode;
 use function App\Coders\Encoders\jsonEncode;
-//
-// use function Helpers\Route\getExtension;
-// use function Helpers\Route\getFormat;
-//
-//
+use function App\Helpers\saveFile;
+
 // $parseFile = $argv[1];
 // $saveFile = $argv[2];
 //

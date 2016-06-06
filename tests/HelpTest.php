@@ -4,6 +4,7 @@ namespace Tests;
 use function App\Helpers\getFormat;
 use function App\Helpers\getExtension;
 use function App\Helpers\parse;
+use function App\Helpers\saveFile;
 
 class HelpTest extends \PHPUnit_Framework_TestCase {
 
@@ -31,6 +32,17 @@ class HelpTest extends \PHPUnit_Framework_TestCase {
     public function testParse() {
         $this->assertEquals('', parse('ololo.ini'));
         $this->assertEquals('12345', parse('trololo.json'));
+    }
+
+    public function testSaveFile(){
+        $data = 'OLolo 1 < 2';
+        $path = 'tmpFile';
+        saveFile($data,$path);
+
+        $this->assertTrue(file_exists($path));
+        $this->assertEquals ($data,file_get_contents($path));
+        unlink($path);
+
     }
 
     protected function tearDown() {
