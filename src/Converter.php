@@ -1,8 +1,8 @@
 <?php
 namespace App;
 
-use function Decoders\Decode\jsonDecode;
-use function Decoders\Decode\iniDecode;
+use function App\Coders\Decoders\jsonDecode;
+use function App\Coders\Decoders\iniDecode;
 //
 // use function Encoders\Encode\jsonEncode;
 //
