@@ -3,8 +3,7 @@ namespace App;
 
 use function App\Coders\Decoders\jsonDecode;
 use function App\Coders\Decoders\iniDecode;
-//
-// use function Encoders\Encode\jsonEncode;
+use function App\Coders\Encoders\jsonEncode;
 //
 // use function Helpers\Route\getExtension;
 // use function Helpers\Route\getFormat;
@@ -35,10 +34,9 @@ function decode ($string, $extension) {
             return -1;
     }
 }
-function encode ($array, $target){
-    $format = getFormat($target);
 
-    switch ($format) {
+function encode ($array, $target){
+    switch ($target) {
       case 'json':
         return jsonEncode($array);
       default:

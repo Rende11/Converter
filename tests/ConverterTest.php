@@ -2,6 +2,7 @@
 namespace Tests;
 
 use function App\decode;
+use function App\encode;
 
 class ConverterTest extends \PHPUnit_Framework_TestCase {
 
@@ -22,5 +23,10 @@ class ConverterTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals( -1, decode($this->string['ini'], 'iddqd'));
     }
 
-    
+    public function testEncode() {
+        $incomingArray = $this->expectedArray;
+        $expectedJson = $this->string['json'];
+        $this->assertEquals($expectedJson,encode($incomingArray,'json'));
+        $this->assertEquals(-1,encode($incomingArray,'txt'));
+    }
 }
