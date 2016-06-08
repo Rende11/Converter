@@ -12,10 +12,8 @@ class DecodeTest extends \PHPUnit_Framework_TestCase {
 
       $this->expectedArray = ["one" => 1, "two" => 2, "three" => 3];
 
-      $this->data['json'] = '{"one": 1, "two": 2, "three": 3}';
-      $this->data['ini'] = 'one=1
-                            two=2
-                            three=3';
+      $this->data['json'] = file_get_contents('tests/files/json.json');
+      $this->data['ini'] = file_get_contents('tests/files/ini.ini');
   }
 
   public function testJsonDecode (){

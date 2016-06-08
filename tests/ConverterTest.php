@@ -3,6 +3,7 @@ namespace Tests;
 
 use function App\decode;
 use function App\encode;
+use function App\convert;
 
 class ConverterTest extends \PHPUnit_Framework_TestCase {
 
@@ -11,10 +12,8 @@ class ConverterTest extends \PHPUnit_Framework_TestCase {
 
     protected function setUp() {
         $this->expectedArray = ["one" => 1, "two" => 2, "three" => 3];
-        $this->string['json'] = '{"one":1,"two":2,"three":3}';
-        $this->string['ini'] = 'one=1
-                                two=2
-                                three=3';
+        $this->string['json'] = file_get_contents('tests/files/json.json');
+        $this->string['ini'] = file_get_contents('tests/files/ini.ini');
     }
 
     public function testDecode() {
@@ -29,4 +28,18 @@ class ConverterTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals($expectedJson,encode($incomingArray,'json'));
         $this->assertEquals(-1,encode($incomingArray,'txt'));
     }
+
+    // public function testConvert(){
+    //     $file = 'test.ini';
+    //     $target = 'ololo.json';
+    //
+    //     $output2 = $this->string['json'];
+    //     // $output = $this->string['json2'];
+    //
+    //     file_put_contents($file,$this->string['ini']);
+    //     convert($file,$target);
+    //     // $this->assertEquals($output, file_get_contents($target));
+    //     $this->assertEquals($output2, file_get_contents($target));
+    //     unlink($file);
+    // }
 }
