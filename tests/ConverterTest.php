@@ -29,17 +29,17 @@ class ConverterTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals(-1,encode($incomingArray,'txt'));
     }
 
-    // public function testConvert(){
-    //     $file = 'test.ini';
-    //     $target = 'ololo.json';
-    //
-    //     $output2 = $this->string['json'];
-    //     // $output = $this->string['json2'];
-    //
-    //     file_put_contents($file,$this->string['ini']);
-    //     convert($file,$target);
-    //     // $this->assertEquals($output, file_get_contents($target));
-    //     $this->assertEquals($output2, file_get_contents($target));
-    //     unlink($file);
-    // }
+    public function testConvert(){
+        $file = 'test.ini';
+        $target = 'ololo.json';
+    
+        $output2 = $this->string['json'];
+        // $output = $this->string['json2'];
+    
+        file_put_contents($file,$this->string['ini']);
+        convert($file,$target);
+        // $this->assertEquals($output, file_get_contents($target));
+        $this->assertEquals($output2, file_get_contents($target));
+        unlink($file);
+    }
 }
